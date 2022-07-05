@@ -189,10 +189,6 @@ public class ticketBooking extends JFrame {
 						JOptionPane.showMessageDialog(from_combo, "INVALID FROM AND TO ARE SAME");
 						return;
 					}
-					if(from_combo.getSelectedIndex()==to_combo.getSelectedIndex()) {
-						JOptionPane.showMessageDialog(from_combo, "INVALID FROM AND TO SAME");
-						return;
-					}
 					if(name_txt.getText().isEmpty()) {
 						JOptionPane.showMessageDialog(name_txt, "ENTER YOUR NAME");
 						return;
@@ -202,7 +198,7 @@ public class ticketBooking extends JFrame {
 						return;
 					}
 					if(train_combo.getSelectedIndex()==0) {
-						JOptionPane.showMessageDialog(train_combo, "SELECT FROM");
+						JOptionPane.showMessageDialog(train_combo, "SELECT TRAIN");
 						return;
 					}
 					
