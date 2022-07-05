@@ -213,6 +213,7 @@ public class ticketBooking extends JFrame {
 					String trainName = (String) train_combo.getSelectedItem();
 					String price = price_txt.getText();
 					
+					//set the ticket to show it in view
 					String ticket[] = {from, to, date, name, String.valueOf(noOfTickets), trainName, price};
 					try {
 						a.setTicket(ticket);
@@ -326,6 +327,7 @@ public class ticketBooking extends JFrame {
 			train_combo.addActionListener(new ActionListener() {
 				public void actionPerformed(ActionEvent e) {
 					try {
+						//get the train prices for calculating total
 						ArrayList<String> prices = giveTrainPrices();
 						int index = train_combo.getSelectedIndex();
 						int noOfTickets = (int)tickets_spinner.getValue();
@@ -334,6 +336,7 @@ public class ticketBooking extends JFrame {
 						}
 						int price = Integer.parseInt(prices.get(index-1));
 						int total = price*noOfTickets;
+						//change everytime the input changes
 						price_txt.setText(String.valueOf(total));
 					} catch (IOException e1) {
 						// TODO Auto-generated catch block
