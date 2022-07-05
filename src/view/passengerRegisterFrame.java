@@ -155,7 +155,6 @@ public class passengerRegisterFrame extends JFrame {
 				public void mouseClicked(MouseEvent e) {
 					
 					//validation
-					//validation
 					String name = name_txt.getText();
 					String username = username_txt.getText();
 					String password = password_txt.getText();
@@ -173,8 +172,10 @@ public class passengerRegisterFrame extends JFrame {
 					}
 					
 					try {
+						//if login successful
 						if(a.setPassengers(name, username, password)) {
 							JOptionPane.showMessageDialog(password_txt, "SUCCESSFULLY REGISTERED");
+							//now login 
 							new passengerLoginFrame().setVisible(true);
 							dispose();
 							return;

@@ -150,6 +150,7 @@ public class passengerLoginFrame extends JFrame {
 			lblRegisterNow.addMouseListener(new MouseAdapter() {
 				@Override
 				public void mouseClicked(MouseEvent e) {
+					//open register panel
 					new passengerRegisterFrame().setVisible(true);
 					dispose();
 				}
@@ -202,12 +203,15 @@ public class passengerLoginFrame extends JFrame {
 					}
 					
 					try {
+						//if the login informations match
 						boolean login = a.getPassengers(username_txt.getText(), password_txt.getText());
 						if(login) {
+							//open passenger portal after login
 							new passengerPortal().setVisible(true);
 							dispose();
 						}
 						else {
+							//if incorrect username
 							JOptionPane.showMessageDialog(password_txt, "INCORECT USERNAME OR PASSWORD");
 							return;
 						}
