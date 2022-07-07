@@ -35,7 +35,7 @@ public class fileHandler {
 		fr.close();
 	}
 	
-	//passenger
+	//passenger write
 	public static void writePassenger(String[] arr) throws IOException {
 		StringBuilder sb = new StringBuilder();
 		//name
@@ -84,6 +84,56 @@ public class fileHandler {
 	
 	public static ArrayList<String[]> readTicket() throws IOException {
 		return mainRead("ticket.csv", 7);
+	}
+	
+	//train screen
+	public static void writeTrainScreen(String[] arr) throws IOException {
+		StringBuilder sb = new StringBuilder();
+		sb.append(arr[0]);
+		sb.append(",");
+		sb.append(arr[1]);
+		mainWrite("trainScreen.csv", sb.toString());
+	}
+	
+	public static void refreshTrainScreen(ArrayList<String[]> alist) throws IOException{
+		StringBuilder sb = new StringBuilder();
+		File file = new File("C:/Users/abhin/Desktop/JAVA/workspace/Railway_Management_System/assets/filingSystem/trainScreen.csv");
+		FileWriter fr = new FileWriter(file, false);
+		
+		for (String[] arr : alist) {
+			sb.append(arr[0]);
+			sb.append(",");
+			sb.append(arr[1]);
+			sb.append("\n");
+		}
+		fr.write(sb.toString());
+		fr.close();
+	}
+	
+	public static ArrayList<String[]> readTrainScreen() throws IOException {
+		return mainRead("trainScreen.csv", 2);
+	}
+	
+	public static void setTrainQueue(ArrayList<String> alist) throws IOException{
+		File file = new File("C:/Users/abhin/Desktop/JAVA/workspace/Railway_Management_System/assets/filingSystem/trainQueue.csv");
+		FileWriter fr = new FileWriter(file,false);
+		StringBuilder sb = new StringBuilder();
+		for (String x : alist) {
+			sb.append(x+"\n");
+		}
+		fr.write(sb.toString());
+		fr.close();
+	}
+	
+	public static ArrayList<String> getTrainQueue() throws IOException {
+		File f = new File("C:/Users/abhin/Desktop/JAVA/workspace/Railway_Management_System/assets/filingSystem/trainQueue.csv");
+		Scanner sc = new Scanner(f);
+		ArrayList<String> alist = new ArrayList<String>();
+		while(sc.hasNext()) {
+			String line= sc.next();
+			alist.add(line);
+		}
+		return alist;
 	}
 	
 
