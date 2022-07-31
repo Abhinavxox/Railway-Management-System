@@ -55,7 +55,6 @@ for their support and encouragement.
 The Indian Railways (IR) carries about 5.5 lakhs passengers in reserved accommodation
 every day. The Computerised Passenger Reservation System (PRS) facilitates the booking
 and cancellation of tickets from any of the 4000 terminals (i.e. PRS booking window all
-
 over the countries). These tickets can be booked or cancelled for journeys commencing in
 any part of India and ending in any other part, with travel time as long as 72hours and
 distance up to several thousand kilometres. In the given project we will be developing a
