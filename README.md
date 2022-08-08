@@ -133,7 +133,7 @@ etc.
 ❖ Remove from queue if train is late and add in new queue
 ❖ Add to main train queue if the late train is now on time
 
-### Use cases:
+### Use case:
 
 Actors:
 
